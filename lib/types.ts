@@ -4,7 +4,7 @@ export type Question = {
   id: string;
   question: string;
   options: Option[];
-  correctAnswerId: string;
+  correctAnswerId: string | null;
   section: string;
   category: string;
   difficulty: string;

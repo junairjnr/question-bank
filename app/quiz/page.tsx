@@ -81,7 +81,9 @@ export default function QuizPage() {
           <p className="text-[13px] text-[var(--mut)]">
             {a.isCorrect
               ? "Correct."
-              : `Incorrect — the correct answer is ${q.correctAnswerId.toUpperCase()}.`}{" "}
+              : q.correctAnswerId
+                ? `Incorrect — the correct answer is ${q.correctAnswerId.toUpperCase()}.`
+                : "No official answer in the PDF — compare with your material."}{" "}
             Source: {q.sourcePdf.replace(/_TEST_2\.pdf/, "")} #{q.originalQuestionNumber}
           </p>
         ) : (

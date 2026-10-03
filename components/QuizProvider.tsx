@@ -58,7 +58,7 @@ export function QuizProvider({ children }: { children: React.ReactNode }) {
   const [timerLabel, setTimerLabel] = useState("");
 
   const BY = useMemo(() => Object.fromEntries(Q.map((q) => [q.id, q])), [Q]);
-  const PL = useMemo(() => Q.filter((q) => q.playable), [Q]);
+  const PL = Q;
   const SECS = useMemo(() => [...new Set(Q.map((q) => q.section))], [Q]);
 
   const sessRef = useRef(sess);

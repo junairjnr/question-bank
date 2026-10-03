@@ -7,7 +7,7 @@ import { ProgressBar, Stat } from "@/components/ui";
 import { pct } from "@/lib/helpers";
 
 export default function DashboardPage() {
-  const { Q, PL, SECS, prog, sess, hist, start } = useQuiz();
+  const { PL, SECS, prog, sess, hist, start } = useQuiz();
   const [section, setSection] = useState("");
   const [difficulty, setDifficulty] = useState("");
   const [count, setCount] = useState("20");
@@ -43,9 +43,6 @@ export default function DashboardPage() {
       </h1>
       <p className="text-[var(--mut)]">
         {PL.length} practice questions across {SECS.length} subjects, from your PDFs.
-        {Q.length > PL.length
-          ? ` ${Q.length - PL.length} more are in the bank but incomplete in the source (see Question Bank → Needs review).`
-          : ""}
       </p>
 
       {sess && !sess.completed ? (

@@ -45,7 +45,7 @@ export function OptionList({
 }) {
   return (
     <>
-      {q.options.map((o) => {
+      {q.options.map((o, idx) => {
         const isC = o.id === q.correctAnswerId;
         const isS = o.id === selected;
         let cls = "";
@@ -60,7 +60,7 @@ export function OptionList({
         if (locked && isC && isS) tag = "✓ Correct (your answer)";
         return (
           <button
-            key={o.id}
+            key={`${o.id}-${idx}`}
             type="button"
             disabled={locked}
             onClick={() => onSelect?.(o.id)}
